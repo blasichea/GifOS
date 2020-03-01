@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "ChakraPetch-Regular";
+  src: url("../fonts/Chakra_Petch/ChakraPetch-Regular.ttf"); }
+@font-face {
+  font-family: "ChakraPetch-Bold";
+  src: url("../fonts/Chakra_Petch/ChakraPetch-Bold.ttf"); }
+* {
+  padding: 0px;
+  margin: 0px; }
+
+.back-grad {
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap; }
+
+nav {
+  margin-bottom: 19px; }
+
+main {
+  padding: 35px 140px 0px 100px; }
+  main section {
+    margin-bottom: 64px; }
+
+header {
+  display: block;
+  height: 23px; }
+  header p {
+    margin-left: 8px;
+    font-family: "ChakraPetch-Regular";
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 23px; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+  nav div#botones {
+    justify-content: space-around; }
+    nav div#botones button {
+      border: 1px solid;
+      height: 36px;
+      width: 135px;
+      font-size: 16px;
+      padding: 5px 20px;
+      font-family: "ChakraPetch-Regular"; }
+    nav div#botones button#dropbtn {
+      width: 36px;
+      padding: 5px 13px; }
+    nav div#botones div#dropdown {
+      display: inline; }
+      nav div#botones div#dropdown ul {
+        display: none; }
+    nav div#botones a {
+      font-family: "ChakraPetch-Regular";
+      font-size: 16px;
+      color: #110038;
+      letter-spacing: 0;
+      line-height: 18px;
+      text-decoration: none; }
+      nav div#botones a span {
+        text-decoration: underline; }
+
+section#busqueda div#barra {
+  height: 99px;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  section#busqueda div#barra span {
+    display: block;
+    height: 24px;
+    margin: 2px;
+    padding-left: 3px;
+    font-family: "ChakraPetch-Bold";
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 24px; }
+  section#busqueda div#barra div#buscador {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    section#busqueda div#barra div#buscador input {
+      flex-grow: 25;
+      height: 48px;
+      margin: 12px 8px 12px 15px;
+      padding-left: 16px;
+      border: 1px solid #979797;
+      box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000; }
+    section#busqueda div#barra div#buscador button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      height: 36px;
+      margin-right: 18px;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+      font-family: "ChakraPetch-Regular";
+      font-size: 16px;
+      color: #B4B4B4;
+      letter-spacing: 0;
+      line-height: 36px; }
+      section#busqueda div#barra div#buscador button img {
+        height: 16px;
+        width: 16px;
+        margin-right: 10px; }
+
+/*# sourceMappingURL=styles.css.map */
