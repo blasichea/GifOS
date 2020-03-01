@@ -1,0 +1,59 @@
+header {
+    display: block;
+    height: 23px;
+
+    p {
+        margin-left: 8px;
+        font-family: "ChakraPetch-Regular";
+        font-size: 12px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 23px;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    div#botones {
+        justify-content: space-around;
+
+        button {
+            border: 1px solid;
+            height: 36px;
+            width: 135px;
+            font-size: 16px;
+            padding: 5px 20px;
+            font-family: "ChakraPetch-Regular";
+        }
+
+        button#dropbtn {
+            width: 36px;
+            padding: 5px 13px;
+        }
+        
+        div#dropdown {
+            display: inline;
+
+            ul {
+                display: none;
+            }
+        }
+
+        a {
+            font-family: "ChakraPetch-Regular";
+            font-size: 16px;
+            color: #110038;
+            letter-spacing: 0;
+            line-height: 18px;
+            text-decoration: none;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+}

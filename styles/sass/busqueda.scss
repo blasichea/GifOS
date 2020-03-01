@@ -1,0 +1,55 @@
+section#busqueda {
+    div#barra {
+        height: 99px;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+        span {
+            display: block;
+            height: 24px;
+            margin: 2px;
+            padding-left: 3px;
+            font-family: "ChakraPetch-Bold";
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: 24px;
+        }
+        div#buscador{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+                flex-grow: 25;
+                height: 48px;
+                margin: 12px 8px 12px 15px;
+                padding-left: 16px;
+                border: 1px solid #979797;
+                box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+            }
+
+            button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                flex-grow: 1;
+                height: 36px;
+                margin-right: 18px;
+                border: 1px solid #808080;
+                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+                font-family: "ChakraPetch-Regular";
+                font-size: 16px;
+                color: #B4B4B4;
+                letter-spacing: 0;
+                line-height: 36px;
+
+                img {
+                    height: 16px;
+                    width: 16px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

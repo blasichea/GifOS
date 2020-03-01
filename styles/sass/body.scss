@@ -1,0 +1,25 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.back-grad {
+    background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+nav {
+    margin-bottom: 19px;
+}
+
+main {
+    padding: 35px 140px 0px 100px;
+
+    section {
+        margin-bottom: 64px;
+    }
+}
