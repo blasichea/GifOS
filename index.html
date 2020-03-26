@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andres Blasiche">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link id="temas" rel="stylesheet" href="./styles/styles.css">
-    <script defer type="text/javascript" src="./scripts/index.js"></script>
+    <link id="temas" rel="stylesheet" href="./styles/temas/night.css">
+    <script defer src="./scripts/index.js"></script>
     <title>GIFos</title>
 </head>
 <body>
-    <header class="back-grad">
-        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+    <header>
+        <div class="back-grad" id="top">
+            <h1>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h1>
+        </div>
     </header>
     <main>
         <nav>
-            <img src="./images/gifOF_logo.png" alt="Logo guifos">
+            <div id="logo"></div>
             <div id="botones">
                 <button id="create">Crear Guifos</button>
-                <div id="dropdown">
-                    <button>Elegir tema
-                        <button class="dropbtn" id="dropbtn" onclick="desplegar()">
-                            <img src="./images/dropdown.svg" alt="Desplegar">
-                        </button>
+                <button>Elegir tema
+                    <button class="dropbtn" id="dropbtn" onclick="desplegar()">
+                        <img id="img-down" src="./images/dropdown.svg" alt="Desplegar">
                     </button>
-                    <ul id="listdrop">
-                        <li>Tema 1</li>
-                        <li>Tema 2</li>
-                    </ul>
+                </button>
+                <div id="dropdown">
+                    <button onclick="changeTheme(1)">Sailor Day</button>
+                    <button onclick="changeTheme(2)">Sailor Night</button> 
                 </div>
                 <a href=""><span>M</span>is Guifos</a>
             </div>
@@ -38,8 +37,8 @@
             <div id="barra">
                 <span class="back-grad">Buscar</span>
                 <div id="buscador">
-                    <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                    <button id="btn-search">
+                    <input id="input-search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button id="btn-search" onclick="buildFrame('prompt-container', 3)">
                         <img src="./images/lupa_inactive.svg" alt="lupa"> Buscar
                     </button>
                 </div>
@@ -52,21 +51,34 @@
         </section>
 
         <section id="sugeridos">
-            <input type="text" placeholder="Hoy te sugerimos:">
-            <div id="sug1"></div>
-            <div id="sug2"></div>
-            <div id="sug3"></div>
-            <div id="sug4"></div>
+            <h1 class="title">Hoy te sugerimos:</h1>
+            <div class="frame-container" id="prompt-container">
+                <div class="frame-prompt">
+                    <div class="top-bar back-grad">
+                        <span class="sug-title">#Cargando</span>
+                        <img class="btn-x" src="./images/buttonX.svg" alt="cerrar">
+                    </div>
+                    <div class="gif">
+                        <img class="img-sug" src="./images/cargando.gif" alt="gif">
+                        <button class="btn-ver">Ver más…</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="tendencias">
-            <input type="text" placeholder="Tendencias:">
-            <div id="ten1"></div>
-            <div id="ten2"></div>
-            <div id="ten3"></div>
-            <div id="ten4"></div>
-            <div id="ten5"></div>
-            <div id="ten6"></div>
+            <h1 class="title">Tendencias:</h1>
+            <div class="frame-container" id="trending-container">
+                <div class="frame-trending">
+                    <div class=gif>
+                        <img class="img-trend" src="./images/cargando.gif" alt="gif">
+                    </div>
+                    <div class="hash-bar back-grad">
+                        <span class="trend-title">#Cargando</span>
+                    </div>
+                </div>
+                
+            </div>
         </section>
     </main>
 </body>

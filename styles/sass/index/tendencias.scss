@@ -1,0 +1,21 @@
+section#tendencias {    
+    .frame-trending {
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+        height: 298px;
+
+        .gif {
+            height: 298px;
+        }
+
+        &:hover {
+            background: #E6E6E6;
+            box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        }
+
+        &:hover div.back-grad {
+            display: block;
+        }
+    }
+}

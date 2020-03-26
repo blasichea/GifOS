@@ -1,4 +1,14 @@
+$font-main: "ChakraPetch-Regular";
+$font-second: "ChakraPetch-Bold";
+$font-italBold: "ChakraPetch-BoldItalic";
+
 @import "fonts";
-@import "body";
-@import "headerNav";
-@import "busqueda";
+
+@import "index/body";
+@import "index/headerNav";
+@import "index/busqueda";
+@import "index/sugeridos";
+@import "index/tendencias";
+
+@import "captura/header";
+@import "captura/capturar";

@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(245, 235, 220);
+}
+
+nav {
+    div#logo {
+        background-image: url("../../images/gifOF_logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    button {
+        background: #F7C9F3;
+
+        &:hover {
+            background: #E6BBE2;
+            border: 1px dotted;
+        }
+    }
+
+    div#dropdown {
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+        button {
+            background: #F0F0F0;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+
+            &:hover {
+                background: #FFF4FD;
+                border: 1px solid #CCA6C9;
+                box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+            }
+        }
+    }
+}
+
+section#busqueda {
+    div#barra, div#btn-resultados {
+        background: #E6E6E6;
+
+        button {
+            background: #F0F0F0;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+
+            &:hover {
+                background: #E6E6E6;
+                box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+            }
+        }
+    }
+}
+
+.frame-prompt {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    
+    .gif {
+        button {
+            background: #4180F6;
+        }
+    }
+}

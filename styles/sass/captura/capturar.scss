@@ -1,0 +1,10 @@
+section#capturar {
+    display: flex;
+    justify-content: center;
+
+    div#crear {
+        padding: 2px;
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
+}

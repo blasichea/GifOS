@@ -1,0 +1,56 @@
+
+.frame-prompt {
+    padding: 2px;
+    height: auto;
+    width: auto;
+}
+
+.top-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    height: 24px;
+
+    .btn-x {
+        margin-right: 4px;
+    }
+}
+
+.title-text {
+    margin-left: 2px;
+    font-family: $font-second;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.gif {
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+
+    img {
+        height: auto;
+        width: 100%;
+        
+    }
+
+    button {
+        height: 34px;
+        position: absolute;
+        align-self: flex-end;
+        margin-left: 14px;
+        padding: 8px 10px;
+        transform: translateY(-9px);
+        border: 1px solid #4C2F99;
+        box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+        font-family: $font-main;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 18px;
+    }
+}
+

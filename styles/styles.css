@@ -4,37 +4,70 @@
 @font-face {
   font-family: "ChakraPetch-Bold";
   src: url("../fonts/Chakra_Petch/ChakraPetch-Bold.ttf"); }
+@font-face {
+  font-family: "ChakraPetch-BoldItalic";
+  src: url("../fonts/Chakra_Petch/ChakraPetch-BoldItalic.ttf"); }
 * {
   padding: 0px;
   margin: 0px; }
 
 .back-grad {
+  display: block;
   background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
+  .back-grad span {
+    padding-left: 5px;
+    font-family: "ChakraPetch-Bold";
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0; }
 
-.flex-container {
-  display: flex;
-  flex-flow: row wrap; }
+.hash-bar {
+  display: none;
+  height: 18px; }
 
-nav {
-  margin-bottom: 19px; }
+.frame-container {
+  display: grid;
+  grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+  grid-gap: 2%;
+  justify-content: center; }
 
 main {
   padding: 35px 140px 0px 100px; }
   main section {
     margin-bottom: 64px; }
 
-header {
+.title {
+  width: 99%;
+  height: 32px;
+  margin-bottom: 16px;
+  padding-left: 7px;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+  font-family: "ChakraPetch-Regular";
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 32px; }
+
+header div#top {
   display: block;
-  height: 23px; }
-  header p {
-    margin-left: 8px;
-    font-family: "ChakraPetch-Regular";
-    font-size: 12px;
-    color: #FFFFFF;
-    letter-spacing: 0;
-    line-height: 23px; }
+  height: 23px;
+  margin: 1px; }
+header h1 {
+  margin-left: 8px;
+  font-family: "ChakraPetch-Regular";
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 23px; }
+
+div#logo {
+  height: 64px;
+  width: 102px; }
 
 nav {
+  margin-bottom: 19px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -42,19 +75,36 @@ nav {
   nav div#botones {
     justify-content: space-around; }
     nav div#botones button {
-      border: 1px solid;
+      border: 1px solid #110038;
       height: 36px;
       width: 135px;
       font-size: 16px;
-      padding: 5px 20px;
-      font-family: "ChakraPetch-Regular"; }
+      font-family: "ChakraPetch-Regular";
+      color: #110038;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
     nav div#botones button#dropbtn {
       width: 36px;
       padding: 5px 13px; }
     nav div#botones div#dropdown {
-      display: inline; }
-      nav div#botones div#dropdown ul {
-        display: none; }
+      display: none;
+      position: absolute;
+      right: 219px;
+      width: 160px;
+      padding: 5px;
+      box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+      nav div#botones div#dropdown button {
+        width: 150px;
+        margin: 5px;
+        border: 1px solid #CCA6C9;
+        box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+        font-family: ChakraPetch-Regular;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px; }
     nav div#botones a {
       font-family: "ChakraPetch-Regular";
       font-size: 16px;
@@ -66,6 +116,7 @@ nav {
         text-decoration: underline; }
 
 section#busqueda div#barra {
+  padding: 1px;
   height: 99px;
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
   section#busqueda div#barra span {
@@ -83,7 +134,7 @@ section#busqueda div#barra {
     flex-direction: row;
     align-items: center; }
     section#busqueda div#barra div#buscador input {
-      flex-grow: 25;
+      flex: 80%;
       height: 48px;
       margin: 12px 8px 12px 15px;
       padding-left: 16px;
@@ -94,9 +145,10 @@ section#busqueda div#barra {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      flex-grow: 1;
       height: 36px;
       margin-right: 18px;
+      padding-left: 10px;
+      padding-right: 14px;
       border: 1px solid #808080;
       box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
       font-family: "ChakraPetch-Regular";
@@ -108,5 +160,92 @@ section#busqueda div#barra {
         height: 16px;
         width: 16px;
         margin-right: 10px; }
+section#busqueda div#btn-resultados {
+  display: none;
+  flex-direction: column;
+  padding: 10px 0px 10px 15px;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  section#busqueda div#btn-resultados button {
+    flex: 80%;
+    margin: 5px 129px 5px 0px;
+    padding-left: 15px;
+    text-align: left;
+    font-family: "ChakraPetch-Regular";
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 36px; }
+
+.frame-prompt {
+  padding: 2px;
+  height: auto;
+  width: auto; }
+
+.top-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  height: 24px; }
+  .top-bar .btn-x {
+    margin-right: 4px; }
+
+.title-text {
+  margin-left: 2px;
+  font-family: "ChakraPetch-Bold";
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0; }
+
+.gif {
+  display: flex;
+  flex-direction: row;
+  height: 250px; }
+  .gif img {
+    height: auto;
+    width: 100%; }
+  .gif button {
+    height: 34px;
+    position: absolute;
+    align-self: flex-end;
+    margin-left: 14px;
+    padding: 8px 10px;
+    transform: translateY(-9px);
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    font-family: "ChakraPetch-Regular";
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px; }
+
+section#tendencias .frame-trending {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  height: 298px; }
+  section#tendencias .frame-trending .gif {
+    height: 298px; }
+  section#tendencias .frame-trending:hover {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  section#tendencias .frame-trending:hover div.back-grad {
+    display: block; }
+
+header img {
+  display: inline-block;
+  height: 24px;
+  width: 24px; }
+header div#logo {
+  display: inline-block; }
+
+section#capturar {
+  display: flex;
+  justify-content: center; }
+  section#capturar div#crear {
+    padding: 2px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
 
 /*# sourceMappingURL=styles.css.map */
