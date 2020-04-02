@@ -6,47 +6,16 @@ const limit_get = "&limit=" + 12;
 const number_suggest = 4;
 const number_trending = 8;
 
-    /*
-    // Mostrar botones
-    document.getElementById("btn-resultados").style.display = "flex";
-    // Obtener GIFs
-    var datos = getSearch("madagascar");
-    datos.then(function(dato){
-        console.log(dato);
-        for(i = 0; i < dato.length; i++){
-            let div = document.createElement("div");
-            let img = document.createElement("img");
-            img.src = dato[i].gif;
-            div.appendChild(img);
-            document.getElementsByClassName("frame-trending")[0].appendChild(div);
-        }
-    });
-    */
-
 incializar();
 
 function incializar() {
+    var result = getSearch("up");
+
     buildFrame('prompt-container', number_suggest-1);
     buildFrame('trending-container', number_trending-1);
-    var result = getSearch("up");
-    insertGifs("img-sug", "sug-title", result);
-    /* var sug_cont = document.getElementsByClassName("img-sug");
-    var sug_title = document.getElementsByClassName("sug-title");
-    result.then(function(dato){
-        for(i = 0; i < number_suggest; i++) {
-            sug_cont[i].src = dato[i].gif;
-            sug_title[i].innerHTML = "#" + dato[i].title;
-        }
-    }); */
 
-    var trend_cont = document.getElementsByClassName("img-trend");
-    var trend_title = document.getElementsByClassName("trend-title");
-    result.then(function(dato){
-        for(i = 0 + 4; i < number_trending + 4; i++) {  //offset +4
-            trend_cont[i-4].src = dato[i].gif;
-            trend_title[i-4].innerHTML = "#" + dato[i].title;
-        }
-    });
+    insertGifs("img-sug", "sug-title", result);
+    insertGifs("img-trend", "trend-title", result);
 }
 
 /* Para mostrar el contenido del dropdown al hacer click en el boton */
@@ -116,7 +85,7 @@ function buildFrame(content, count){
 function insertGifs(contenedor, titulo, gifs){
     var clase_cont = document.getElementsByClassName(contenedor);
     var clase_title = document.getElementsByClassName(titulo);
-    gifs.then(function(dato){
+    gifs.then(dato => {
         for(i = 0; i < clase_cont.length; i++) {
             clase_cont[i].src = dato[i].gif;
             clase_title[i].innerHTML = "#" + dato[i].title;
@@ -127,6 +96,8 @@ function insertGifs(contenedor, titulo, gifs){
 
 /* ########     EVENTOS      ######## */
 
+/* Captura evento cuando escriben en la barra de busqueda
+    y muestra los botones de sugerencias */
 document.getElementById("input-search").addEventListener("input", 
     function(){
         document.getElementById("btn-resultados").style.display = "flex";

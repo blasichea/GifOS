@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andres Blasiche">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link id="temas" rel="stylesheet" href="./styles/temas/night.css">
+    <link id="temas" rel="stylesheet" href="./styles/temas/day.css">
     <script defer src="./scripts/index.js"></script>
     <title>GIFos</title>
 </head>
@@ -19,22 +19,22 @@
         <nav>
             <div id="logo"></div>
             <div id="botones">
-                <button id="create">Crear Guifos</button>
-                <button>Elegir tema
-                    <button class="dropbtn" id="dropbtn" onclick="desplegar()">
+                <button class="button-theme" id="create">Crear Guifos</button>
+                <button class="button-theme no-border-right">Elegir tema
+                    <button class="dropbtn button-theme" id="dropbtn" onclick="desplegar()">
                         <img id="img-down" src="./images/dropdown.svg" alt="Desplegar">
                     </button>
                 </button>
-                <div id="dropdown">
-                    <button onclick="changeTheme(1)">Sailor Day</button>
-                    <button onclick="changeTheme(2)">Sailor Night</button> 
+                <div class="back-grey shadow2" id="dropdown">
+                    <button class="button-theme" onclick="changeTheme(1)">Sailor Day</button>
+                    <button class="button-theme" onclick="changeTheme(2)">Sailor Night</button> 
                 </div>
-                <a href=""><span>M</span>is Guifos</a>
+                <a href="./captura.html"><span>M</span>is Guifos</a>
             </div>
         </nav>
         
         <section id="busqueda">
-            <div id="barra">
+            <div class="back-grey" id="barra">
                 <span class="back-grad">Buscar</span>
                 <div id="buscador">
                     <input id="input-search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
@@ -43,7 +43,7 @@
                     </button>
                 </div>
             </div>
-            <div id="btn-resultados">
+            <div class="back-grey" id="btn-resultados">
                 <button id="res-sugerido">Resultado de búsqueda sugerido</button>
                 <button id="res-similar">Un resultado similar de búsqueda</button>
                 <button id="res-otro">Y otro más</button>
@@ -53,7 +53,7 @@
         <section id="sugeridos">
             <h1 class="title">Hoy te sugerimos:</h1>
             <div class="frame-container" id="prompt-container">
-                <div class="frame-prompt">
+                <div class="back-grey shadow2 frame-prompt">
                     <div class="top-bar back-grad">
                         <span class="sug-title">#Cargando</span>
                         <img class="btn-x" src="./images/buttonX.svg" alt="cerrar">

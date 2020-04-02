@@ -1,0 +1,61 @@
+section#grabadora {
+    display: none;
+}
+
+div#grabar {
+    height: 548px;
+    max-width: 860px;
+    padding: 2px;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+    div#cont-video {
+        margin: 11px 17px 24px 11px;
+        height: 434px;
+        max-width: 832px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+
+        video{
+            max-height: 434px;
+        }
+    }
+
+    div#btn-video {
+        margin: 21px 16px 16px 11px;
+
+        button#camera, button#recording {
+            width: 36px;
+            padding: 7px;
+        }
+
+        div#subir button {
+            margin-left: 14px;
+        }
+    }
+
+    div#listo, div#subir, div#subiendo {
+        display: none;
+    }
+}
+
+.btn-listo {
+    @include boton;
+    background: #FF6161;
+    color: #FFFFFF;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+
+    &:hover {
+        outline: 1px dotted #110038;
+        outline-offset: -4px;
+    }
+}
+
+.no-border-left {
+    border-left-style: none;
+}
+
+.no-border-right {
+    border-right-style: none;
+}

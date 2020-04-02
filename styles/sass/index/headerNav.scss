@@ -20,6 +20,25 @@ div#logo {
     width: 102px;
 }
 
+@mixin boton {
+    border: 1px solid #110038;
+    height: 36px;
+    width: 135px;
+    font-size: 16px;
+    font-family: $font-main;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+.button-theme {
+    @include boton;
+}
+
+.button-secondary {
+    @include boton;
+}
+
 nav {
     margin-bottom: 19px;
     display: flex;
@@ -29,19 +48,6 @@ nav {
 
     div#botones {
         justify-content: space-around;
-
-        button {
-            border: 1px solid #110038;
-            height: 36px;
-            width: 135px;
-            font-size: 16px;
-            font-family: $font-main;
-            color: #110038;
-            letter-spacing: 0;
-            text-align: center;
-            line-height: 18px;
-            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-        }
 
         button#dropbtn {
             width: 36px;
@@ -54,14 +60,13 @@ nav {
             right: 219px;
             width: 160px;
             padding: 5px;
-            box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 
             button {
                 width: 150px;
                 margin: 5px;
-                border: 1px solid #CCA6C9;
-                box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
-                font-family: ChakraPetch-Regular;
+                border: 1px solid #808080;
+                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+                font-family: $font-main;
                 font-size: 16px;
                 color: #110038;
                 letter-spacing: 0;
@@ -70,6 +75,7 @@ nav {
         }
 
         a {
+            margin-left: 10px;
             font-family: $font-main;
             font-size: 16px;
             color: #110038;

@@ -1,42 +1,63 @@
+$shadow2: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+$path-logo: "../../images/gifOF_logo_dark.png";
+
 body {
-    background-color: rgb(42, 42, 70);
+    background-color: #151839;
+}
+
+.button-theme {
+    background: #EE3EFE;
+        color: #FFFFFF;
+        box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+
+        &:hover {
+            background: #CE36DB;
+            outline: 1px dotted #110038;
+            outline-offset: -4px;
+        }
+}
+
+.back-grey {
+    background: #B4B4B4;
+}
+
+.shadow2 {
+    box-shadow: $shadow2;
+}
+
+.button-secondary {
+    background: #110038;
+    color: #FFFFFF;
+    border: 1px solid #B4B4B4;
+    box-shadow: inset -1px -1px 0 0 #5C5C5C, inset 1px 1px 0 0 #FFF4FD;
+
+    &:hover {
+        outline: 1px dotted white;
+        outline-offset: -4px;
+    }
 }
 
 div#logo {
-    background-image: url("../../images/gifOF_logo_dark.png");
+    background-image: url($path-logo);
     background-position: center;
     background-repeat: no-repeat;
 }
 
 nav {
     div#botones{
-        button {
-            background: #EE3EFE;
-            color: #FFFFFF;
-
-            &:hover {
-                background: #CE36DB;
-                border: 1px dotted;
-            }
-        }
-
         a {
             height: 32px;
             color: #FFFFFF;
 
             &:hover {
-                border: 1px dotted #FFFFFF;
+                outline: 1px dotted #FFFFFF;
+                outline-offset: 6px;
             }
         }
 
         div#dropdown {
-            background: #B4B4B4;
-            box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
-
             button {
                 background: #CCCCCC;
-                border: 1px solid #808080;
-                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 
                 &:hover {
                     background: #2E32FB;
@@ -50,16 +71,12 @@ nav {
 
 section#busqueda {
     div#barra, div#btn-resultados {
-        background: #B4B4B4;
-
         button {
             background: #CCCCCC;
-            border: 1px solid #808080;
-            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 
             &:hover {
                 background: #B4B4B4;
-                box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+                box-shadow: $shadow2;
             }
         }
     }
@@ -68,9 +85,6 @@ section#busqueda {
 }
 
 .frame-prompt {
-    background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
-
     .gif {
         button {
             background: #2E32FB;

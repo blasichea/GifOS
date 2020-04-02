@@ -1,0 +1,43 @@
+section#resultado {
+    display: none;
+}
+
+div#result {
+    height: 391px;
+    width: 721px;
+    padding: 2px;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+    div#ver-result {
+        display: flex;
+        flex-direction: row;
+        margin-top: 29px;
+        
+
+        div#reproducir {
+            height: 191px;
+            width: 365px;
+            margin: 0px 27px;
+            background: #FFFFFF;
+            border: 1px solid #979797;
+            box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        }
+
+        div#btn-result {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            button {
+                width: 256px;
+                margin-top: 16px;
+                margin-right: 46px;
+            }
+        }
+    }
+
+    div#listo2 {
+        margin-top: 64px;
+        margin-right: 46px;
+    }
+}

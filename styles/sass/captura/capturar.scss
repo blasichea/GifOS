@@ -1,10 +1,64 @@
-section#capturar {
+.bold {
+    font-family: $font-second;
+}
+
+.italic-bold {
+    font-family: $font-italBold;
+}
+
+.flex-row-end {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+section#capturar, #grabadora, #resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     div#crear {
         padding: 2px;
-        background: #E6E6E6;
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        max-width: 684px;
+
+        div#icon-title {
+            display: flex;
+            flex-direction: row;
+            
+            img {
+                margin: 30px 16px 7px 25px;
+            }
+
+            h1 {
+                margin-top: 30px;
+                font-size: 16px;
+                color: #110038;
+                letter-spacing: 0;
+                line-height: 22px;
+            }
+        }
+
+        div#texto {
+            margin: 7px 93px 28px 73px;
+            font-family: $font-main;
+            font-size: 14px;
+            color: #110038;
+            letter-spacing: 0;
+            line-height: 20px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        div#btn-crear {
+            margin-right: 36px;
+            margin-bottom: 36px;
+
+            button {
+                margin-left: 16px;
+            }
+        }
     }
 }

@@ -1,41 +1,52 @@
 body {
-  background-color: #f5ebdc; }
+  background-color: #fdf4fd; }
+
+.button-theme {
+  background: #F7C9F3;
+  color: #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+  .button-theme:hover {
+    background: #E6BBE2;
+    outline: 1px dotted #110038;
+    outline-offset: -4px; }
+
+.button-secondary {
+  background: #FFF4FD;
+  color: #110038;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+  .button-secondary:hover {
+    background: #F0E5EE;
+    outline: 1px dotted #110038;
+    outline-offset: -4px; }
+
+.back-grey {
+  background: #E6E6E6; }
+
+.shadow2 {
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
 
 nav div#logo {
   background-image: url("../../images/gifOF_logo.png");
   background-position: center;
   background-repeat: no-repeat; }
-nav button {
-  background: #F7C9F3; }
-  nav button:hover {
-    background: #E6BBE2;
-    border: 1px dotted; }
-nav div#dropdown {
-  background: #E6E6E6;
-  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
-  nav div#dropdown button {
-    background: #F0F0F0;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF; }
-    nav div#dropdown button:hover {
-      background: #FFF4FD;
-      border: 1px solid #CCA6C9;
-      box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF; }
+nav div#dropdown button {
+  background: #F0F0F0; }
+  nav div#dropdown button:hover {
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF; }
+nav a:hover {
+  outline: 1px dotted #110038;
+  outline-offset: 6px; }
 
-section#busqueda div#barra, section#busqueda div#btn-resultados {
-  background: #E6E6E6; }
-  section#busqueda div#barra button, section#busqueda div#btn-resultados button {
-    background: #F0F0F0;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF; }
-    section#busqueda div#barra button:hover, section#busqueda div#btn-resultados button:hover {
-      background: #E6E6E6;
-      box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+section#busqueda div#barra button, section#busqueda div#btn-resultados button {
+  background: #F0F0F0; }
+  section#busqueda div#barra button:hover, section#busqueda div#btn-resultados button:hover {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
 
-.frame-prompt {
-  background: #E6E6E6;
-  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
-  .frame-prompt .gif button {
-    background: #4180F6; }
+.frame-prompt .gif button {
+  background: #4180F6; }
 
 /*# sourceMappingURL=day.css.map */
