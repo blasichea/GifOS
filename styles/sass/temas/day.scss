@@ -1,5 +1,6 @@
 $shadow2: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 $path-logo: "../../images/gifOF_logo.png";
+$path-arrow: "../../images/back-arrow-black.svg";
 
 body {
     background-color: #fdf4fd;
@@ -38,12 +39,20 @@ body {
     box-shadow: $shadow2;
 }
 
+div#back-arrow {
+    background-image: url($path-arrow);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div#logo {
+    background-image: url($path-logo);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 nav {
-    div#logo {
-        background-image: url($path-logo);
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    
 
     div#dropdown {
         button {

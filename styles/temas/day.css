@@ -26,10 +26,16 @@ body {
 .shadow2 {
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
 
-nav div#logo {
+div#back-arrow {
+  background-image: url("../../images/back-arrow-black.svg");
+  background-position: center;
+  background-repeat: no-repeat; }
+
+div#logo {
   background-image: url("../../images/gifOF_logo.png");
   background-position: center;
   background-repeat: no-repeat; }
+
 nav div#dropdown button {
   background: #F0F0F0; }
   nav div#dropdown button:hover {

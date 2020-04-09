@@ -13,6 +13,7 @@
 
 .back-grad {
   display: block;
+  overflow: hidden;
   background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); }
   .back-grad span {
     padding-left: 5px;
@@ -96,7 +97,8 @@ nav {
     justify-content: space-around; }
     nav div#botones button#dropbtn {
       width: 36px;
-      padding: 5px 13px; }
+      padding: 5px 13px;
+      margin-left: -4px; }
     nav div#botones div#dropdown {
       display: none;
       position: absolute;
@@ -128,7 +130,7 @@ section#busqueda div#barra {
   padding: 1px;
   height: 99px;
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
-  section#busqueda div#barra span {
+  section#busqueda div#barra h2 {
     display: block;
     height: 24px;
     margin: 2px;
@@ -201,6 +203,11 @@ section#busqueda div#btn-resultados {
   .top-bar .btn-x {
     margin-right: 4px; }
 
+.sug-title {
+  max-height: 24px;
+  line-height: 24px;
+  flex: 80%; }
+
 .title-text {
   margin-left: 2px;
   padding-left: 5px;
@@ -236,16 +243,18 @@ section#busqueda div#btn-resultados {
   padding: 2px;
   display: flex;
   flex-direction: column;
-  height: 298px; }
+  max-height: 298px; }
   .frame-trending .gif {
     height: 298px; }
+    .frame-trending .gif:hover {
+      height: 280px; }
   .frame-trending:hover {
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
   .frame-trending:hover div.back-grad {
     display: block; }
 
-header img {
+header div#back-arrow {
   display: inline-block;
   height: 24px;
   width: 24px;
@@ -279,7 +288,7 @@ section#capturar, #grabadora, #resultado {
       flex-direction: row; }
       section#capturar div#crear div#icon-title img, #grabadora div#crear div#icon-title img, #resultado div#crear div#icon-title img {
         margin: 30px 16px 7px 25px; }
-      section#capturar div#crear div#icon-title h1, #grabadora div#crear div#icon-title h1, #resultado div#crear div#icon-title h1 {
+      section#capturar div#crear div#icon-title h2, #grabadora div#crear div#icon-title h2, #resultado div#crear div#icon-title h2 {
         margin-top: 30px;
         font-size: 16px;
         color: #110038;
@@ -317,6 +326,47 @@ div#grabar {
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000; }
     div#grabar div#cont-video video {
       max-height: 434px; }
+    div#grabar div#cont-video img#vista {
+      display: none;
+      height: 434px;
+      max-width: 832px; }
+    div#grabar div#cont-video div#carga {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      height: 434px;
+      width: 832px; }
+      div#grabar div#cont-video div#carga img {
+        height: 48px;
+        width: 48px;
+        margin-bottom: 8px; }
+      div#grabar div#cont-video div#carga span.bold {
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px; }
+      div#grabar div#cont-video div#carga div#barra-upload {
+        height: 24px;
+        width: 324px;
+        background: #B4B4B4;
+        box-shadow: inset 2px 2px 0 0 #000000;
+        /* inset -2px -2px 0 0 #FFFCFC; */
+        margin-top: 39px;
+        margin-bottom: 8px;
+        padding-left: 2px; }
+        div#grabar div#cont-video div#carga div#barra-upload .cuadrito {
+          height: 22px;
+          width: 12px;
+          margin: 2px 2px 0px 0px;
+          background: #999999; }
+      div#grabar div#cont-video div#carga span#chico {
+        font-family: "ChakraPetch-Regular";
+        font-size: 12px;
+        color: rgba(17, 0, 56, 0.64);
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 14px; }
   div#grabar div#btn-video {
     margin: 21px 16px 16px 11px; }
     div#grabar div#btn-video button#camera, div#grabar div#btn-video button#recording {

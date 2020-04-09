@@ -19,26 +19,31 @@
         <nav>
             <div id="logo"></div>
             <div id="botones">
-                <button class="button-theme" id="create">Crear Guifos</button>
-                <button class="button-theme no-border-right">Elegir tema
-                    <button class="dropbtn button-theme" id="dropbtn" onclick="desplegar()">
-                        <img id="img-down" src="./images/dropdown.svg" alt="Desplegar">
-                    </button>
+                <button class="button-theme" id="create" onclick="window.open('captura.html', '_self')">
+                    Crear Guifos
                 </button>
+                
+                <button class="button-theme no-border-right">
+                    Elegir tema
+                </button>
+                <button class="dropbtn button-theme" id="dropbtn" onclick="desplegar()">
+                    <img id="img-down" src="./images/dropdown.svg" alt="Desplegar">
+                </button>
+                
                 <div class="back-grey shadow2" id="dropdown">
-                    <button class="button-theme" onclick="changeTheme(1)">Sailor Day</button>
-                    <button class="button-theme" onclick="changeTheme(2)">Sailor Night</button> 
+                    <button class="button-theme" onclick="changeTheme('1')">Sailor Day</button>
+                    <button class="button-theme" onclick="changeTheme('2')">Sailor Night</button> 
                 </div>
-                <a href="./captura.html"><span>M</span>is Guifos</a>
+                <a href="./captura.html#misguifos"><span>M</span>is Guifos</a>
             </div>
         </nav>
         
         <section id="busqueda">
             <div class="back-grey" id="barra">
-                <span class="back-grad">Buscar</span>
+                <h2 class="back-grad">Buscar</h2>
                 <div id="buscador">
-                    <input id="input-search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                    <button id="btn-search" onclick="buildFrame('prompt-container', 3)">
+                    <input id="input-search" type="text" value="" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button id="btn-search" onclick="buscar()">
                         <img src="./images/lupa_inactive.svg" alt="lupa"> Buscar
                     </button>
                 </div>
@@ -51,7 +56,7 @@
         </section>
 
         <section id="sugeridos">
-            <h1 class="title">Hoy te sugerimos:</h1>
+            <h2 class="title">Hoy te sugerimos:</h2>
             <div class="frame-container" id="prompt-container">
                 <div class="back-grey shadow2 frame-prompt">
                     <div class="top-bar back-grad">
@@ -67,7 +72,7 @@
         </section>
 
         <section id="tendencias">
-            <h1 class="title">Tendencias:</h1>
+            <h2 class="title" id="title-trend">Tendencias:</h2>
             <div class="frame-container" id="trending-container">
                 <div class="frame-trending">
                     <div class=gif>
@@ -77,7 +82,6 @@
                         <span class="trend-title">#Cargando</span>
                     </div>
                 </div>
-                
             </div>
         </section>
     </main>

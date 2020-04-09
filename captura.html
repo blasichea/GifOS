@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andres Blasiche">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link id="temas" rel="stylesheet" href="./styles/temas/night.css">
+    <link id="temas" rel="stylesheet" href="./styles/temas/day.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
     <script defer src="./scripts/captura.js"></script>
     <title>Mis Guifos</title>
 </head>
@@ -14,16 +15,16 @@
         <div class="back-grad" id="top">
             <h1>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h1>
         </div>
-        <a href="./index.html"><img src="./images/back-arrow-white.svg" alt="volver"></a>
+        <a href="./index.html"><div id="back-arrow"></div></a>
         <div id="logo"></div>
     </header>
     <main>
         <section id="capturar">
             <div class="back-grey" id="crear">
-                <h1 class="back-grad title-text">Crear Guifos</h1>
+                <h2 class="back-grad title-text">Crear Guifos</h2>
                 <div id="icon-title">
                     <img src="./images/ventanita.png" alt="icono ventana">
-                    <h1 class="bold">Aquí podrás crear tus propios guifos</h1>
+                    <h2 class="bold">Aquí podrás crear tus propios guifos</h2>
                 </div>
                 <div id="texto">
                     <p>Crear tu <span class="italic-bold">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:</p>
@@ -47,21 +48,28 @@
         <section id="grabadora">
             <div id="grabar">
                 <div class="top-bar back-grad">
-                    <h1 class="title-text" id="title-bar">Un Chequeo Antes de Empezar</h1>
+                    <h2 class="title-text" id="title-bar">Un Chequeo Antes de Empezar</h2>
                     <img class="btn-x" src="./images/buttonX.svg" onclick="cerrar()" alt="cerrar">
                 </div>
 
                 <div id="cont-video">
-                    <video id="preview" src=""></video>
+                    <video id="preview"></video>
+                    <img id="vista" src="./images/cargando.gif" alt="gif preview">
+                    <div id="carga">
+                        <img src="./images/globe_img.png" alt="globo terraqueo">
+                        <span class="bold">Estamos subiendo tu guifo…</span>
+                        <div id="barra-upload"><div class="cuadrito"></div></div>
+                        <span id="chico">Tiempo restante: algunos minutos</span>
+                    </div>
                 </div>
 
                 <div class="flex-row-end" id="btn-video">
                     <div class="flex-row-end" id="captura">
                         <button id="camera" class="button-theme no-border-right">
                             <img src="./images/camera.svg" alt="camara">
-                            <button class="button-theme no-border-left" onclick="recordVideo()">
-                                Capturar
-                            </button>
+                        </button>
+                        <button class="button-theme no-border-left" id="btn-captura" onclick="recordVideo()">
+                            Capturar
                         </button>
                     </div>
 
@@ -69,24 +77,24 @@
                         <!-- Temporizador -->
                         <button class="btn-listo no-border-right" id="recording">
                             <img src="./images/recording.svg" alt="recording">
-                            <button class="btn-listo no-border-left" onclick="listo()">
-                                Listo
-                            </button>
+                        </button>
+                        <button class="btn-listo no-border-left" id="btn-stop" onclick="listo()">
+                            Listo
                         </button>
                     </div>
 
                     <div class="flex-row-end" id="subir">
                         <!-- Barra con PLAY -->
-                        <button class="button-secondary" onclick="repetir()">
+                        <button class="button-secondary" id="btn-repetir" onclick="repetir()">
                             Repetir Captura
                         </button>
-                        <button class="button-theme" onclick="subir()">
+                        <button class="button-theme" id="btn-subir" onclick="subir()">
                             Subir Guifo
                         </button>
                     </div>
 
                     <div class="flex-row-end" id="subiendo">
-                        <button class="button-secondary" onclick="cerrar()">
+                        <button class="button-secondary" onclick="cancelar()">
                             Cancelar
                         </button>
                     </div>
@@ -97,12 +105,12 @@
         <section id="resultado">
             <div id="result">
                 <div class="top-bar back-grad">
-                    <h1 class="title-text">Guifo Subido Con Éxito</h1>
+                    <h2 class="title-text">Guifo Subido Con Éxito</h2>
                     <img class="btn-x" src="./images/buttonX.svg" alt="cerrar">
                 </div>
                 <div id="ver-result">
                     <div id="reproducir">
-                        <video id="end-video" src=""></video>
+                        <video id="end-video"></video>
                     </div>
                     <div id="btn-result">
                         <span class="bold">Guifo creado con éxito</span>
@@ -117,11 +125,11 @@
         </section>
 
         <section id="misguifos">
-            <h1 class="title">Mis guifos</h1>
-            <div class="frame-container">
+            <h2 class="title">Mis guifos</h2>
+            <div class="frame-container" id="container">
                 <div class="frame-trending">
                     <div class="gif">
-                        <img class="my-img" src="" alt="gif">
+                        <img class="my-img" src="#" alt="gif">
                     </div>
                 </div>
             </div>

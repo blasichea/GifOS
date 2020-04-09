@@ -25,6 +25,11 @@ body {
     outline: 1px dotted white;
     outline-offset: -4px; }
 
+div#back-arrow {
+  background-image: url("../../images/back-arrow-white.svg");
+  background-position: center;
+  background-repeat: no-repeat; }
+
 div#logo {
   background-image: url("../../images/gifOF_logo_dark.png");
   background-position: center;

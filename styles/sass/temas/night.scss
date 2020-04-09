@@ -1,5 +1,6 @@
 $shadow2: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 $path-logo: "../../images/gifOF_logo_dark.png";
+$path-arrow: "../../images/back-arrow-white.svg";
 
 body {
     background-color: #151839;
@@ -35,6 +36,12 @@ body {
         outline: 1px dotted white;
         outline-offset: -4px;
     }
+}
+
+div#back-arrow {
+    background-image: url($path-arrow);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 div#logo {
