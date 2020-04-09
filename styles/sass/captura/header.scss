@@ -1,14 +1,26 @@
 header {
-    div#back-arrow {
-        display: inline-block;
-        height: 24px;
-        width: 24px;
-        margin-left: 60px;
-        margin-bottom: 20px;
-    }
+    nav {
+        margin-top: 35px;
+        padding-right: 140px;
 
-    div#logo {
-        display: inline-block;
-        margin-left: 7px;
+        div#back-arrow {
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            margin-left: 60px;
+            margin-bottom: 20px;
+        }
+
+        div#logo {
+            display: inline-block;
+            margin-left: 7px;
+        }
+
+        div#botones {
+            div#dropdown {
+                right: 140px;
+                width: 162px;
+            }
+        }
     }
 }

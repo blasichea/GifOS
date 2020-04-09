@@ -254,15 +254,21 @@ section#busqueda div#btn-resultados {
   .frame-trending:hover div.back-grad {
     display: block; }
 
-header div#back-arrow {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  margin-left: 60px;
-  margin-bottom: 20px; }
-header div#logo {
-  display: inline-block;
-  margin-left: 7px; }
+header nav {
+  margin-top: 35px;
+  padding-right: 140px; }
+  header nav div#back-arrow {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-left: 60px;
+    margin-bottom: 20px; }
+  header nav div#logo {
+    display: inline-block;
+    margin-left: 7px; }
+  header nav div#botones div#dropdown {
+    right: 140px;
+    width: 162px; }
 
 .bold {
   font-family: "ChakraPetch-Bold"; }
@@ -347,6 +353,8 @@ div#grabar {
         text-align: center;
         line-height: 22px; }
       div#grabar div#cont-video div#carga div#barra-upload {
+        display: flex;
+        flex-direction: row;
         height: 24px;
         width: 324px;
         background: #B4B4B4;

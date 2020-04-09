@@ -3,6 +3,7 @@ const endp_upload = "https://upload.giphy.com/v1/gifs";
 const endp_forId = "https://api.giphy.com/v1/gifs/";
 var video = document.getElementById("preview");
 var recorder;
+var intervalo;
 var form = new FormData();
 var session = window.sessionStorage;
 var event_destroy = new Event("destroy");
@@ -12,6 +13,23 @@ incializar();
 function incializar() {
     checkTheme();
     initMyGifs();
+    initBarraCarga();
+}
+
+
+/* Para mostrar el contenido del dropdown al hacer click en el boton */
+function desplegar() {
+    document.getElementById("dropdown").style.display = "block";
+}
+
+/* Para ocultar dropdown al hacer click fuera de él*/
+window.onclick = function(e) {
+    if (!e.target.matches(".dropbtn")) {
+        var myDropdown = document.getElementById("dropdown");
+        if (myDropdown.style.display === "block") {
+            myDropdown.style.display = "none";
+        }
+    }
 }
 
 
@@ -35,7 +53,7 @@ function initCam(cont) {
             
             recorder = RecordRTC(stream, {
                 type: 'gif',
-                frameRate: 1,
+                frameRate: 70,
                 quality: 10,
                 width: 360,
                 hidden: 240,
@@ -123,6 +141,9 @@ function gifUpload(fdata){
                         item.push(url);
                         localStorage.setItem("mygifs", JSON.stringify(item));
                     }
+                    document.getElementById("grabadora").style.display = "none";
+                    document.getElementById("resultado").style.display = "block";
+                    clearInterval(intervalo);
                 })
                 .catch(error => {
                     return error;
@@ -175,6 +196,11 @@ function buildFrame(content, count){
 /*  Las siguientes funciones son para:
     Cambios en el DOM al presionar botones */
 
+function cancel() {
+    document.getElementById("capturar").style.display = "none";
+}
+
+
 function startVideo() {
     document.getElementById("capturar").style.display = "none";
     document.getElementById("grabadora").style.display = "flex";
@@ -203,6 +229,7 @@ function subir() {
     document.getElementById("vista").style.display = "none";
     document.getElementById("carga").style.display = "flex";
     document.getElementById("title-bar").innerHTML = "Subiendo Guifo";
+    animationBar();
 }
 
 
@@ -219,27 +246,48 @@ function cancelar() {
     document.getElementById("grabadora").style.display = "none";
     document.getElementById("capturar").style.display = "flex";
     document.getElementById("captura").style.display = "flex";
+    clearInterval(intervalo);
 }
 
 
 function cerrar() {
     document.getElementById("grabadora").style.display = "none";
     document.getElementById("capturar").style.display = "flex";
+    clearInterval(intervalo);
+}
+
+
+/*  Inicializar barra de carga */
+function initBarraCarga() {
+    var barra = document.getElementById("barra-upload");
+
+    for(i = 1; i < 23; i++) {
+        let clon = barra.children[0].cloneNode(true);
+        barra.appendChild(clon);
+    }
 }
 
 
 /*  Animar barra de carga */
-function barAnimate() {
-    var barra = document.getElementById("barra-upload");
+function animationBar() {
     var cuadritos = document.getElementsByClassName("cuadrito");
-    var intervalo = setInterval(avance, 5);
-    var index = 0;
+    var index_front = 0;
+    var index_back = 0;
 
-    for(i = 0; i < 23; i++) {
-        
-    }
+    intervalo = setInterval(avance, 50);
     function avance() {
-        cuadritos[i].style.background = "#F7C9F3";
+        cuadritos[index_front].style.background = "#F7C9F3";
+        if(index_front < 22) {
+            index_front++;   
+        }
+        if(index_front > 6) {
+            cuadritos[index_back].style.background = "#999999";
+            index_back++;
+            if(index_back == 23) {
+                index_back = 0;
+                index_front = 0;
+            }
+        }
     }
 }
 
@@ -249,10 +297,12 @@ function changeTheme(tema) {
     switch(tema) {
         case "1":
             document.getElementById("temas").href = "./styles/temas/day.css";
+            document.getElementById("img-down").src = "./images/dropdown.svg";
             session.setItem("theme_value","1");
             break;
         case "2":
             document.getElementById("temas").href = "./styles/temas/night.css";
+            document.getElementById("img-down").src = "./images/dropdown-night.svg";
             session.setItem("theme_value","2");
             break;    
     }

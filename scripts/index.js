@@ -6,19 +6,17 @@ const limit_get = 12;
 const number_suggest = 4;
 const number_trending = 8;
 var session = window.sessionStorage;
+var quality = "fixed_height_small";    /* "fixed_height_small" "original" */
 
 incializar();
 
 
 function incializar() {
     var result = getTrending();
-    /* var result2 = getRandom(); */
 
     checkTheme();
-
     buildFrame('prompt-container', number_suggest);
     buildFrame('trending-container', number_trending);
-
     insertGifs("img-trend", "trend-title", result);
     sugeridos();
 }
@@ -81,7 +79,7 @@ function getSearch(search) {
             /* console.log(data); */
             var datos = [];
             for(i = 0; i < data.data.length; i++){
-                datos.push({"title": data.data[i].title, "gif": data.data[i].images.original.url});
+                datos.push({"title": data.data[i].title, "gif": data.data[i].images.fixed_height_small.url});
                 /* console.log(datos[i]); */
             }
             return datos;
@@ -103,7 +101,7 @@ function getTrending() {
         .then(data => {
             var datos = [];
             for(i = 0; i < data.data.length; i++){
-                datos.push({"title": data.data[i].title, "gif": data.data[i].images.original.url});
+                datos.push({"title": data.data[i].title, "gif": data.data[i].images.fixed_height_small.url});
             }
             return datos;
         })
@@ -139,7 +137,7 @@ function getRandom() {
         })
         .then(data => {
             var datos = [];
-            datos.push({"title": data.data.title, "gif": data.data.images.original.url});
+            datos.push({"title": data.data.title, "gif": data.data.images.fixed_height_small.url});
             return datos;
         })
         .catch(error => {

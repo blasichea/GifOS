@@ -48,6 +48,8 @@ div#grabar {
             }
 
             div#barra-upload {
+                display: flex;
+                flex-direction: row;
                 height: 24px;
                 width: 324px;
                 background: #B4B4B4;

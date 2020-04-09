@@ -15,8 +15,29 @@
         <div class="back-grad" id="top">
             <h1>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</h1>
         </div>
-        <a href="./index.html"><div id="back-arrow"></div></a>
-        <div id="logo"></div>
+        <nav>
+            <div>
+                <a href="./index.html"><div id="back-arrow"></div></a>
+                <div id="logo"></div>
+            </div>
+            <div id="botones">
+                <button class="button-theme" id="create" onclick="window.open('captura.html', '_self')">
+                    Crear Guifos
+                </button>
+                
+                <button class="button-theme no-border-right">
+                    Elegir tema
+                </button>
+                <button class="dropbtn button-theme" id="dropbtn" onclick="desplegar()">
+                    <img id="img-down" src="./images/dropdown.svg" alt="Desplegar">
+                </button>
+                
+                <div class="back-grey shadow2" id="dropdown">
+                    <button class="button-theme" onclick="changeTheme('1')">Sailor Day</button>
+                    <button class="button-theme" onclick="changeTheme('2')">Sailor Night</button> 
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <section id="capturar">
@@ -35,7 +56,7 @@
                     <p>¿Quieres comenzar a crear tu <span class="italic-bold">guifo</span> ahora?</p>
                 </div>
                 <div class="flex-row-end" id="btn-crear">
-                    <button class="button-secondary" onclick="close()">
+                    <button class="button-secondary" onclick="cancel()">
                         Cancelar
                     </button>
                     <button class="button-theme" onclick="startVideo()">
