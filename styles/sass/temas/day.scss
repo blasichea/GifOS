@@ -6,7 +6,7 @@ body {
     background-color: #fdf4fd;
 }
 
-.button-theme {
+.button-theme, button#btn-search {
     background: #F7C9F3;
     color: #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
@@ -66,14 +66,16 @@ nav {
         }
     }
 
-    a:hover {
-        outline: 1px dotted #110038;
-        outline-offset: 6px;
+    div#botones {
+        a:hover {
+            outline: 1px dotted #110038;
+            outline-offset: 6px;
+        }
     }
 }
 
 section#busqueda {
-    div#barra, div#btn-resultados {
+    div#btn-resultados {
         button {
             background: #F0F0F0;
 

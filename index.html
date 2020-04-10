@@ -34,7 +34,7 @@
                     <button class="button-theme" onclick="changeTheme('1')">Sailor Day</button>
                     <button class="button-theme" onclick="changeTheme('2')">Sailor Night</button> 
                 </div>
-                <a href="./captura.html#misguifos"><span>M</span>is Guifos</a>
+                <a id="enlace" href="./captura.html#misguifos"><span>M</span>is Guifos</a>
             </div>
         </nav>
         
@@ -43,15 +43,16 @@
                 <h2 class="back-grad">Buscar</h2>
                 <div id="buscador">
                     <input id="input-search" type="text" value="" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                    <button id="btn-search" onclick="buscar()">
-                        <img src="./images/lupa_inactive.svg" alt="lupa"> Buscar
+                    <button id="btn-search" onclick="buscar('')" disabled>
+                        <img id="lupa" src="./images/lupa_inactive.svg" alt="lupa">
+                        Buscar
                     </button>
                 </div>
             </div>
             <div class="back-grey" id="btn-resultados">
-                <button id="res-sugerido">Resultado de búsqueda sugerido</button>
-                <button id="res-similar">Un resultado similar de búsqueda</button>
-                <button id="res-otro">Y otro más</button>
+                <button class="busca-sugerido"></button>
+                <button class="busca-sugerido"></button>
+                <button class="busca-sugerido"></button>
             </div>
         </section>
 

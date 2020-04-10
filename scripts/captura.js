@@ -3,6 +3,7 @@ const endp_upload = "https://upload.giphy.com/v1/gifs";
 const endp_forId = "https://api.giphy.com/v1/gifs/";
 var video = document.getElementById("preview");
 var recorder;
+var url;
 var intervalo;
 var form = new FormData();
 var session = window.sessionStorage;
@@ -38,7 +39,9 @@ window.onclick = function(e) {
 function initCam(cont) {
     /* Inicializo vista */
     document.getElementById("vista").style.display = "none";
+    document.getElementById("title-bar").innerHTML = "Un Chequeo Antes de Empezar";
     video.style.display = "block";
+    document.getElementById("captura").style.display = "flex";
     /* Inicio camara */
     navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -53,7 +56,7 @@ function initCam(cont) {
             
             recorder = RecordRTC(stream, {
                 type: 'gif',
-                frameRate: 70,
+                frameRate: 170,
                 quality: 10,
                 width: 360,
                 hidden: 240,
@@ -85,7 +88,8 @@ function stopRec() {
         video.style.display = "none";
         document.getElementById("vista").style.display = "block";
         document.getElementById("vista").src = gifUrl;                    
-        document.getElementById("end-video").src = gifUrl;
+        document.getElementById("gif-result").src = gifUrl;
+        document.getElementById("link").href = gifUrl;
         /* Form + UP + destroy */
         form.append("file", blob, "myGif.gif");
         document.getElementById("btn-subir").addEventListener("click", subirGif);
@@ -102,7 +106,6 @@ function destroyRec() {
     recorder.camera.stop();
     recorder.destroy();
     recorder = null;
-    form.delete("file");
 }
 
 
@@ -130,9 +133,9 @@ function gifUpload(fdata){
                 })
                 .then(data => {
                     var mygifs = localStorage.getItem("mygifs");
-                    var url = data.data.images.original.url;
                     var item = [];
-                    agregoMiGif(url);
+                    url = data.data.images.original.url;
+                    agregoMiGif();
                     if(mygifs){
                         item = JSON.parse(mygifs);
                         item.push(url);
@@ -142,6 +145,7 @@ function gifUpload(fdata){
                         localStorage.setItem("mygifs", JSON.stringify(item));
                     }
                     document.getElementById("grabadora").style.display = "none";
+                    document.getElementById("carga").style.display = "none";
                     document.getElementById("resultado").style.display = "block";
                     clearInterval(intervalo);
                 })
@@ -155,8 +159,8 @@ function gifUpload(fdata){
 }
 
 
-/*  Agrega un nuevo gif a "Mis Guifos" */
-function agregoMiGif(url) {
+/*  Agrega un nuevo gif a "Mis Guifos" con la url*/
+function agregoMiGif() {
     var padre = document.getElementById("container");
     var clon = padre.children[0].cloneNode(true);
 
@@ -204,7 +208,7 @@ function cancel() {
 function startVideo() {
     document.getElementById("capturar").style.display = "none";
     document.getElementById("grabadora").style.display = "flex";
-    /* initCam(video); */
+    initCam(video);
 }
 
 
@@ -219,7 +223,7 @@ function listo() {
     document.getElementById("listo").style.display = "none";
     document.getElementById("subir").style.display = "flex";
     document.getElementById("title-bar").innerHTML = "Vista Previa";
-    /* stopCam(video); */
+    stopCam(video);
 }
 
 
@@ -236,17 +240,24 @@ function subir() {
 function repetir() {
     document.getElementById("subir").style.display = "none";
     document.getElementById("captura").style.display = "flex";
-    /* destroyRec();
-    initCam(video); */
+    destroyRec();
+    initCam(video);
 }
 
 
 function cancelar() {
     document.getElementById("subiendo").style.display = "none";
     document.getElementById("grabadora").style.display = "none";
+    document.getElementById("carga").style.display = "none";
     document.getElementById("capturar").style.display = "flex";
-    document.getElementById("captura").style.display = "flex";
     clearInterval(intervalo);
+}
+
+
+function finalizar() {
+    document.getElementById("resultado").style.display = "none";
+    document.getElementById("subiendo").style.display = "none";
+    document.getElementById("capturar").style.display = "flex";
 }
 
 
@@ -289,6 +300,19 @@ function animationBar() {
             }
         }
     }
+}
+
+
+/*  Copia URL de gif al clipboard */
+function copyUrl() {
+    const elem = document.createElement('input');
+    elem.value = url;
+    elem.style.left = "-9999px";
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand("copy");
+    alert("Se copió: " + elem.value);
+    document.body.removeChild(elem);
 }
 
 

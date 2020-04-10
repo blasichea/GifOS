@@ -30,21 +30,26 @@ section#busqueda {
             }
 
             button {
+                @include boton;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                height: 36px;
+                width: 102px;
                 margin-right: 18px;
                 padding-left: 10px;
                 padding-right: 14px;
-                border: 1px solid #808080;
-                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-                font-family: $font-main;
-                font-size: 16px;
-                color: #B4B4B4;
-                letter-spacing: 0;
-                line-height: 36px;
+
+                &:disabled {
+                    background: #F0F0F0;
+                    border: 1px solid #808080;
+                    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+                    font-family: $font-main;
+                    font-size: 16px;
+                    color: #B4B4B4;
+                    letter-spacing: 0;
+                    line-height: 36px;
+                }
 
                 img {
                     height: 16px;

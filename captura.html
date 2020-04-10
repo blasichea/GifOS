@@ -131,16 +131,22 @@
                 </div>
                 <div id="ver-result">
                     <div id="reproducir">
-                        <video id="end-video"></video>
+                        <img src="./images/cargando.gif" id="gif-result" alt="vista de gif">
                     </div>
                     <div id="btn-result">
                         <span class="bold">Guifo creado con éxito</span>
-                        <button class="button-theme">Copiar Enlace Guifo</button>
-                        <button class="button-theme">Descargar Guifo</button>
+                        <button class="button-theme" onclick="copyUrl()">
+                            Copiar Enlace Guifo
+                        </button>
+                        <a id="link" href="#" download="miGuifo">
+                            <button class="button-theme">Descargar Guifo</button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex-row-end" id="listo2">
-                    <button class="button-theme">Listo</button>
+                    <button class="button-theme" onclick="finalizar()">
+                        Listo
+                    </button>
                 </div>
             </div>
         </section>
@@ -150,7 +156,7 @@
             <div class="frame-container" id="container">
                 <div class="frame-trending">
                     <div class="gif">
-                        <img class="my-img" src="#" alt="gif">
+                        <img class="my-img" src="./images/cargando.gif" alt="gif">
                     </div>
                 </div>
             </div>

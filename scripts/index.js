@@ -19,6 +19,7 @@ function incializar() {
     buildFrame('trending-container', number_trending);
     insertGifs("img-trend", "trend-title", result);
     sugeridos();
+    buquedaSugerida();
 }
 
 
@@ -166,14 +167,40 @@ function sugeridos() {
 
 /*  Funcion que se ejecuta en la barra de busqueda
     Inserta los gifs en Tendencias y cambia el titulo */
-function buscar() {
-    var input = document.getElementById("input-search");
-    var titulo = document.getElementById("title-trend");
-    var result = getSearch(input.value);
-
+function buscar(search) {
+    var result;
+    var title;
+    document.getElementById("btn-resultados").style.display = "none";
+    if(search == ""){
+        let input = document.getElementById("input-search");
+        result = getSearch(input.value);
+        title = input.value;
+    } else {
+        console.log("BUSCO search");
+        result = getSearch(search);
+        title = search;
+    }
+    console.log(result);
+    document.getElementById("title-trend").innerHTML = title;;
     resetGif("img-trend");
     insertGifs("img-trend", "trend-title", result);
-    titulo.innerHTML = input.value;
+}
+
+
+/*  Busco en la API palabras sugeridas para busquedas y las
+    recomiendo en los botones de la barra de busqueda */
+function buquedaSugerida(){
+    var botones = document.getElementsByClassName("busca-sugerido");
+    getTrendSearch()
+        .then(array => {
+            for(i = 0; i < 3; i++){
+                botones[i].innerHTML = "buscar: #" + array[i];
+                botones[i].setAttribute("onclick", "buscar('" + array[i] + "')");
+            }
+        })
+        .catch(error => {
+            return error;
+        });
 }
 
 
@@ -195,7 +222,6 @@ function insertGifs(img, titulo, gifs){
     var clase_cont = document.getElementsByClassName(img);
     var clase_title = document.getElementsByClassName(titulo);
     gifs.then(dato => {
-        console.log(dato);
         for(i = 0; i < clase_cont.length; i++) {
             clase_cont[i].src = dato[i].gif;
             clase_title[i].innerHTML = "#" + dato[i].title;
@@ -209,8 +235,10 @@ function insertOneGif(img, title, btn, gif) {
     gif.then(d => {
         img.src = d[0].gif;
         title.innerHTML = "#" + d[0].title;
-        /* btn.addEventListener("click", function()); */
-    })
+        btn.addEventListener("click", function(){
+            buscar(d[0].title);
+        });
+    });
 }
 
 
@@ -230,5 +258,17 @@ function resetGif(img) {
     y muestra los botones de sugerencias */
 document.getElementById("input-search").addEventListener("input", 
     function(){
+        document.getElementById("lupa").src = "./images/lupa.svg";
+        document.getElementById("btn-search").removeAttribute("disabled");
         document.getElementById("btn-resultados").style.display = "flex";
+
+    });
+
+document.getElementById("input-search").addEventListener("keyup",
+    function(){
+        if(this.value == ""){
+            document.getElementById("lupa").src = "./images/lupa_inactive.svg";
+            document.getElementById("btn-search").setAttribute("disabled", true);
+            document.getElementById("btn-resultados").style.display = "none";
+        }
     });

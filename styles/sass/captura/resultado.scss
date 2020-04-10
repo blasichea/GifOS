@@ -18,15 +18,28 @@ div#result {
             height: 191px;
             width: 365px;
             margin: 0px 27px;
+            padding: 2px;
             background: #FFFFFF;
             border: 1px solid #979797;
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+
+            img#gif-result {
+                height: 191px;
+                width: 365px;
+            }
         }
 
         div#btn-result {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            input#copy-url {
+                /* display: none; */
+                border: none;
+                width: 0px;
+                z-index: -3;
+            }
 
             button {
                 width: 256px;

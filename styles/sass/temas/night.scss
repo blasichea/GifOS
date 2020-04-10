@@ -6,7 +6,7 @@ body {
     background-color: #151839;
 }
 
-.button-theme {
+.button-theme, button#btn-search {
     background: #EE3EFE;
         color: #FFFFFF;
         box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
@@ -35,6 +35,14 @@ body {
     &:hover {
         outline: 1px dotted white;
         outline-offset: -4px;
+    }
+}
+
+.frame-prompt {
+    .gif {
+        button {
+            background: #2E32FB;
+        }
     }
 }
 
@@ -77,7 +85,7 @@ nav {
 }
 
 section#busqueda {
-    div#barra, div#btn-resultados {
+    div#btn-resultados {
         button {
             background: #CCCCCC;
 
@@ -91,10 +99,8 @@ section#busqueda {
 
 }
 
-.frame-prompt {
-    .gif {
-        button {
-            background: #2E32FB;
-        }
+section#resultado {
+    span.bold {
+        color: #FFFFFF;
     }
 }

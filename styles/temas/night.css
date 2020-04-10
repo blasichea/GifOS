@@ -1,11 +1,11 @@
 body {
   background-color: #151839; }
 
-.button-theme {
+.button-theme, button#btn-search {
   background: #EE3EFE;
   color: #FFFFFF;
   box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF; }
-  .button-theme:hover {
+  .button-theme:hover, button#btn-search:hover {
     background: #CE36DB;
     outline: 1px dotted #110038;
     outline-offset: -4px; }
@@ -24,6 +24,9 @@ body {
   .button-secondary:hover {
     outline: 1px dotted white;
     outline-offset: -4px; }
+
+.frame-prompt .gif button {
+  background: #2E32FB; }
 
 div#back-arrow {
   background-image: url("../../images/back-arrow-white.svg");
@@ -48,13 +51,13 @@ nav div#botones div#dropdown button {
     border: 1px solid rgba(51, 53, 143, 0.2);
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF; }
 
-section#busqueda div#barra button, section#busqueda div#btn-resultados button {
+section#busqueda div#btn-resultados button {
   background: #CCCCCC; }
-  section#busqueda div#barra button:hover, section#busqueda div#btn-resultados button:hover {
+  section#busqueda div#btn-resultados button:hover {
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF; }
 
-.frame-prompt .gif button {
-  background: #2E32FB; }
+section#resultado span.bold {
+  color: #FFFFFF; }
 
 /*# sourceMappingURL=night.css.map */

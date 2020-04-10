@@ -6,10 +6,6 @@
 
     .gif {
         height: 298px;
-
-        &:hover {
-            height: 280px;
-        }
     }
 
     &:hover {
@@ -19,5 +15,11 @@
 
     &:hover div.back-grad {
         display: block;
+    }
+}
+
+section#tendencias {
+    .gif:hover {
+        height: 280px;
     }
 }
