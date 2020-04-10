@@ -89,7 +89,6 @@ function stopRec() {
         document.getElementById("vista").style.display = "block";
         document.getElementById("vista").src = gifUrl;                    
         document.getElementById("gif-result").src = gifUrl;
-        document.getElementById("link").href = gifUrl;
         /* Form + UP + destroy */
         form.append("file", blob, "myGif.gif");
         document.getElementById("btn-subir").addEventListener("click", subirGif);
@@ -313,6 +312,19 @@ function copyUrl() {
     document.execCommand("copy");
     alert("Se copió: " + elem.value);
     document.body.removeChild(elem);
+}
+
+
+/*  Download gif */
+function downloadGif(){
+    var link = document.createElement("a");
+    link.download = "miGuifo";
+    link.target = "_blank";
+    link.href = document.getElementById("gif-result").src;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
 }
 
 
