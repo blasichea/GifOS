@@ -4,7 +4,8 @@ const endp_forId = "https://api.giphy.com/v1/gifs/";
 var video = document.getElementById("preview");
 var recorder;
 var url;
-var intervalo;
+var intervalo_barra;
+var intervalo_timer;
 var form = new FormData();
 var session = window.sessionStorage;
 var event_destroy = new Event("destroy");
@@ -146,7 +147,7 @@ function gifUpload(fdata){
                     document.getElementById("grabadora").style.display = "none";
                     document.getElementById("carga").style.display = "none";
                     document.getElementById("resultado").style.display = "block";
-                    clearInterval(intervalo);
+                    clearInterval(intervalo_barra);
                 })
                 .catch(error => {
                     return error;
@@ -212,9 +213,11 @@ function startVideo() {
 
 
 function recordVideo() {
+    timeRec();
     document.getElementById("captura").style.display = "none";
     document.getElementById("listo").style.display = "flex";
     document.getElementById("title-bar").innerHTML = "Capturando Tu Guifo";
+    
 }
 
 
@@ -222,6 +225,8 @@ function listo() {
     document.getElementById("listo").style.display = "none";
     document.getElementById("subir").style.display = "flex";
     document.getElementById("title-bar").innerHTML = "Vista Previa";
+    clearInterval(intervalo_timer);
+    copyTimer();
     stopCam(video);
 }
 
@@ -249,7 +254,7 @@ function cancelar() {
     document.getElementById("grabadora").style.display = "none";
     document.getElementById("carga").style.display = "none";
     document.getElementById("capturar").style.display = "flex";
-    clearInterval(intervalo);
+    clearInterval(intervalo_barra);
 }
 
 
@@ -263,7 +268,7 @@ function finalizar() {
 function cerrar() {
     document.getElementById("grabadora").style.display = "none";
     document.getElementById("capturar").style.display = "flex";
-    clearInterval(intervalo);
+    clearInterval(intervalo_barra);
 }
 
 
@@ -284,7 +289,7 @@ function animationBar() {
     var index_front = 0;
     var index_back = 0;
 
-    intervalo = setInterval(avance, 50);
+    intervalo_barra = setInterval(avance, 50);
     function avance() {
         cuadritos[index_front].style.background = "#F7C9F3";
         if(index_front < 22) {
@@ -299,6 +304,43 @@ function animationBar() {
             }
         }
     }
+}
+
+
+/*  Timer para la grabacion del gif */
+function timeRec(){
+    var minutos = document.getElementById("minutos");
+    var segundos = document.getElementById("segundos");
+    var seg = 0;
+    var min = 0;
+    intervalo_timer = setInterval(timer, 1000);
+    function timer(){
+        if(seg < 10){
+            segundos.innerHTML = "0" + seg;
+        } else {
+            segundos.innerHTML = seg;
+        }
+        seg++;
+        if(min < 10){
+            minutos.innerHTML = "0" + min + ":";
+        } else {
+            minutos.innerHTML = min + ":";
+        }
+        if(seg == 60){
+            seg = 0;
+            min++;
+        }
+    }
+}
+
+
+/*  Copia el resultado del timer y lo pega en la otra vista */
+function copyTimer(){
+    var minutos = document.getElementById("minutos");
+    var segundos = document.getElementById("segundos");
+    var result = document.getElementById("res-timer");
+    
+    result.innerHTML = "00:" + minutos.innerHTML + segundos.innerHTML;
 }
 
 

@@ -116,3 +116,24 @@ div#grabar {
 .no-border-right {
     border-right-style: none;
 }
+
+.timer {
+    height: 36px;
+    width: 124px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    font-family: ChakraPetch-Regular;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: center;
+}
+
+div#listo, div#subir {
+    display: flex;
+    flex: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}

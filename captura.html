@@ -94,24 +94,28 @@
                         </button>
                     </div>
 
-                    <div class="flex-row-end" id="listo">
-                        <!-- Temporizador -->
-                        <button class="btn-listo no-border-right" id="recording">
-                            <img src="./images/recording.svg" alt="recording">
-                        </button>
-                        <button class="btn-listo no-border-left" id="btn-stop" onclick="listo()">
-                            Listo
-                        </button>
+                    <div id="listo">
+                        <div class="timer" id="timer"><span>00:</span><span id="minutos">00:</span><span id="segundos">00</span></div>
+                        <div class="flex-row-end">
+                            <button class="btn-listo no-border-right" id="recording">
+                                <img src="./images/recording.svg" alt="recording">
+                            </button>
+                            <button class="btn-listo no-border-left" id="btn-stop" onclick="listo()">
+                                Listo
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="flex-row-end" id="subir">
-                        <!-- Barra con PLAY -->
-                        <button class="button-secondary" id="btn-repetir" onclick="repetir()">
-                            Repetir Captura
-                        </button>
-                        <button class="button-theme" id="btn-subir" onclick="subir()">
-                            Subir Guifo
-                        </button>
+                    <div id="subir">
+                        <div class="timer" id="res-timer"></div>
+                        <div class="flex-row-end">
+                            <button class="button-secondary" id="btn-repetir" onclick="repetir()">
+                                Repetir Captura
+                            </button>
+                            <button class="button-theme" id="btn-subir" onclick="subir()">
+                                Subir Guifo
+                            </button>
+                        </div>
                     </div>
 
                     <div class="flex-row-end" id="subiendo">
